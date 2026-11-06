@@ -46,12 +46,13 @@ MCP registrations from GreenWave. Merge the entries you want into
 `graphify-mcp` and a graph generated in the target project. The Context7
 example uses `npx`. The Playwright skill uses its CLI.
 
-## Provenance
+## Licenses and provenance
 
-The 32 skill directories are the tracked GreenWave snapshot identified
-below, including the upstream source records in their `.openskills.json`
-files. The upstream projects are Superpowers, Emil's Skills, Caveman,
-Graphify, Context7, and Playwright CLI. Check the respective upstream
-terms before redistributing the snapshot.
+The 32 skills come from GreenWave snapshot
+`eb2ede66db809a4cd0d5839418f7938af5224211`. See
+[third-party notices](.agent/skills/.licenses/THIRD_PARTY_NOTICES.md) for
+the upstream revisions, license texts, and local changes. The install
+command copies the notices together with the skills.
 
-GreenWave snapshot `eb2ede66db809a4cd0d5839418f7938af5224211`.
+The MCP configuration examples come from GreenWave and retain its
+[MIT license](examples/LICENSE).
