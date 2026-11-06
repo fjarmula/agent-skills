@@ -1,8 +1,11 @@
 # Agent Skills
 
 A project-local skill pack for Claude Code and Codex. Both use the same
-skill files in `.agent/skills/` through relative symlinks, so a project
-can commit the setup and share it with its team.
+skill files in `.agent/skills/`. Claude Code uses `.claude/skills/` and
+Codex uses `.agents/skills/`. Both paths are relative symlinks that a
+project can commit and share with its team.
+
+[Codex skill discovery documentation](https://learn.chatgpt.com/docs/build-skills)
 
 ## Install in a project
 
@@ -15,13 +18,13 @@ pack="/absolute/path/to/agent-skills"
 (
   set -e
   set -o pipefail
-  for path in .agent/skills .claude/skills .codex/skills; do
+  for path in .agent/skills .claude/skills .agents/skills; do
     if [ -e "$path" ] || [ -L "$path" ]; then
       printf 'Already exists: %s\n' "$path" >&2
       exit 1
     fi
   done
-  git -C "$pack" archive HEAD -- .agent/skills .claude/skills .codex/skills |
+  git -C "$pack" archive HEAD -- .agent/skills .claude/skills .agents/skills |
     tar -xf -
 )
 ```
